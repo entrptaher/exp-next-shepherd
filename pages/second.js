@@ -19,12 +19,6 @@ const Home = () => (
       </p>
 
       <div className="grid">
-        <Link href="/second" prefetch>
-          <a className="card tour-documentation-first">
-            <h3>Go To Second Page &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-        </Link>
         <a href="https://nextjs.org/learn" className="card tour-learn">
           <h3>Learn &rarr;</h3>
           <p>Learn about Next.js in an interactive course with quizzes!</p>
@@ -47,6 +41,12 @@ const Home = () => (
             Instantly deploy your Next.js site to a public URL with ZEIT Now.
           </p>
         </a>
+        <Link href="/">
+          <a className="card tour-documentation-second">
+            <h3>Go to first page &rarr;</h3>
+            <p>Find in-depth information about Next.js features and API.</p>
+          </a>
+        </Link>
       </div>
     </main>
 
@@ -206,7 +206,7 @@ const Home = () => (
 const GuidedHome = () => {
   return (
     <>
-      <Tour stepId="first" />
+      <Tour stepId="second" />
       <Home />
     </>
   );
