@@ -47,6 +47,18 @@ const Home = () => (
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
         </Link>
+        <Link href="/">
+          <a className="card tour-documentation-second-one">
+            <h3>Second ONE &rarr;</h3>
+            <p>Find in-depth information about Next.js features and API.</p>
+          </a>
+        </Link>
+        <Link href="/">
+          <a className="card tour-documentation-second-two">
+            <h3>Second Two &rarr;</h3>
+            <p>Find in-depth information about Next.js features and API.</p>
+          </a>
+        </Link>
       </div>
     </main>
 
@@ -206,7 +218,7 @@ const Home = () => (
 const GuidedHome = () => {
   return (
     <>
-      <Tour stepId="second" />
+      <Tour stepId="second" stepIds={['second-one', 'second-two']}/>
       <Home />
     </>
   );
