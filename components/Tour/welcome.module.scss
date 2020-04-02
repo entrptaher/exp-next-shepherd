@@ -1,0 +1,170 @@
+.shepherd-logo {
+  height: auto;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 217px;
+
+  .lines, .open-eye, .wink {
+    transition: visibility 0s, opacity 0.25s ease-in-out;
+  }
+
+  .open-eye {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lines, .wink {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover {
+    .lines, .wink {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .open-eye {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.shepherd-button {
+  background: #ffffff;
+  border-top: solid 4px #16202d;
+  border-radius: 0;
+  color: #16202d;
+  display: flex;
+  flex-grow: 1;
+  font-family: "GT Pressura", sans-serif;
+  font-size: 1rem;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover {
+    background: #16202d;
+    color: #ffffff;
+  }
+
+  &.shepherd-button-secondary {
+    background: #cad5d5;
+
+    &:hover {
+      color: #cad5d5;
+      background: #16202d;
+    }
+  }
+}
+
+.shepherd-cancel-icon {
+  font-family: "GT Pressura", sans-serif;
+}
+
+.shepherd-element {
+  border: solid 4px #16202d;
+  border-radius: 0;
+}
+
+.shepherd-header, .shepherd-footer {
+  border-radius: 0;
+}
+
+.shepherd-element .shepherd-arrow {
+  border-width: 0;
+  height: auto;
+  width: auto;
+}
+
+.shepherd-arrow::before {
+  display: none;
+}
+
+.shepherd-element {
+  .shepherd-arrow:after {
+    content: url("https://shepherdjs.dev/landing/assets/img/arrow.svg");
+    display: inline-block;
+  }
+
+  &[data-popper-placement^="top"] .shepherd-arrow, &.shepherd-pinned-top .shepherd-arrow {
+    bottom: -35px;
+  }
+
+  &[data-popper-placement^="top"] .shepherd-arrow:after, &.shepherd-pinned-top .shepherd-arrow:after {
+    transform: rotate(270deg);
+  }
+
+  &[data-popper-placement^="bottom"] .shepherd-arrow {
+    top: -35px;
+
+    &:after {
+      transform: rotate(90deg);
+    }
+  }
+
+  &[data-popper-placement^="left"] .shepherd-arrow, &.shepherd-pinned-left .shepherd-arrow {
+    right: -35px;
+  }
+
+  &[data-popper-placement^="left"] .shepherd-arrow:after, &.shepherd-pinned-left .shepherd-arrow:after {
+    transform: rotate(180deg);
+  }
+
+  &[data-popper-placement^="right"] .shepherd-arrow, &.shepherd-pinned-right .shepherd-arrow {
+    left: -35px;
+  }
+}
+
+.shepherd-footer {
+  padding: 0;
+
+  button:not(:last-of-type) {
+    border-right: solid 4px #16202d;
+  }
+}
+
+.shepherd-has-title .shepherd-content {
+  .shepherd-cancel-icon {
+    margin-top: -7px;
+  }
+
+  .shepherd-header {
+    background: transparent;
+    font-family: "GT Pressura", sans-serif;
+    padding-bottom: 0;
+    padding-left: 2rem;
+
+    .shepherd-title {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.shepherd-text {
+  font-size: 1.2rem;
+  padding: 2rem;
+
+  a {
+    border-bottom: 1px dotted;
+    border-bottom-color: rgba(0, 0, 0, 0.75);
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+
+    &:visited, &:active {
+      border-bottom: 1px dotted;
+      border-bottom-color: rgba(0, 0, 0, 0.75);
+      color: rgba(0, 0, 0, 0.75);
+      text-decoration: none;
+    }
+
+    &:hover, &:visited:hover, &:active:hover {
+      border-bottom-style: solid;
+    }
+  }
+}

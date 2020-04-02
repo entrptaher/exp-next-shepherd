@@ -1,6 +1,8 @@
 import { useEffect, useContext } from "react";
 import { ShepherdTour, ShepherdTourContext } from "react-shepherd";
-import './style.css';
+
+import "shepherd.js/dist/css/shepherd.css";
+import "./welcome.module.scss";
 
 const Tour = props => {
   const tour = useContext(ShepherdTourContext);
@@ -30,7 +32,7 @@ const Tour = props => {
         id: "go-to-first",
         attachTo: {
           element: document.querySelector(".tour-documentation-second"),
-          on: "top"
+          on: "left"
         },
         buttons: [
           {
@@ -55,7 +57,16 @@ const Tour = props => {
 };
 
 export default props => (
-  <ShepherdTour steps={[]}>
-    <Tour {...props} />
-  </ShepherdTour>
+  <>
+    <div id="tour"></div>
+    <ShepherdTour
+      steps={[]}
+      tourOptions={{
+        modalContainer: document.querySelector("#tour"),
+        useModalOverlay: false
+      }}
+    >
+      <Tour {...props} />
+    </ShepherdTour>
+  </>
 );

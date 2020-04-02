@@ -19,7 +19,7 @@ const Home = () => (
       </p>
 
       <div className="grid">
-        <Link href="/second" prefetch>
+        <Link href="/second">
           <a className="card tour-documentation-first">
             <h3>Go To Second Page &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
